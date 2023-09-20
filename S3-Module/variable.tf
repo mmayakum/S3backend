@@ -17,3 +17,8 @@ variable "create_vpc" {
   type    = bool
   default = true
 }
+
+variable "versioning" {
+  type    = string
+  default = "Enabled"
+}
