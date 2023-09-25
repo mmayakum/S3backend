@@ -5,7 +5,7 @@ variable "name" {
 
 variable "env" {
   type    = string
-  default = "dev"
+  default = "prod"
 }
 
 variable "region" {
