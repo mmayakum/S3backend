@@ -2,7 +2,7 @@
 resource "aws_s3_bucket" "backend" {
   count = var.create_vpc ? 1 : 0
 
-  bucket = lower("bootcamp32-${var.env}-${random_integer.backend.result}")
+  bucket = "bootcamp32-${lower(var.env)}-${random_integer.backend.result}"
 
   tags = {
     Name        = "my backend"
@@ -17,7 +17,7 @@ resource "aws_kms_key" "mykey" {
 }
 
 #3. Bucket encryption
-resource "aws_s3_bucket_server_side_encryption_configuration" "backend" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
   bucket = aws_s3_bucket.backend[0].id
 
   rule {
