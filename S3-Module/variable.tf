@@ -1,3 +1,8 @@
+variable "name" {
+  type    = string
+  default = "mybucket"
+}
+
 variable "env" {
   type    = string
   default = "prod"
